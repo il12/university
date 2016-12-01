@@ -1,0 +1,50 @@
+<html>
+<head>
+<script>
+  function send(){
+    obj = {"2010":"50%","2011":"75%","2012":"86%","2013":"95%","2014":"100%","2015":"5%","2016":"33%"}
+    draw( obj );
+  }
+  function draw( obj ) {
+      var canvas = document.getElementById("canvas");
+      if (canvas.getContext) {
+        var ctx = canvas.getContext("2d");
+        var height=500;
+        var width=500;
+        var x=30;
+        var y=510;
+        var key="year2010";
+        var arrayKeys=Object.keys(obj)
+        var stepy=height/(arrayKeys.length+1);
+        var stepx=width/(arrayKeys.length+1);
+        ctx.beginPath();
+        ctx.moveTo(30,510);
+        ctx.lineTo(30,10);
+        ctx.moveTo(30,510);
+        ctx.lineTo(530,510);
+        ctx.closePath();
+        ctx.stroke();
+        //отрисовка значений оси x
+        for(var key in obj){
+          var percent=obj[key].split("%");
+          console.log(percent[0]*5)
+          x+=stepx;
+          var y=520;
+          ctx.fillText(key, x-stepx/9, y);
+          ctx.fillRect(x-stepx/12, y-10-percent[0]*5, stepx/3, percent[0]*5)
+        }
+        //отрисовка значений оси y
+        for(i=0;i<=100;i+=10){
+          var text=i+"%";
+          var x=0;
+          ctx.fillText(text, x, y);
+          y-=50;
+        }
+      }
+  }
+</script>
+</head>
+<body onload="send()">
+<canvas id="canvas" width="550", height="520"></canvas>
+</body>
+</html>
