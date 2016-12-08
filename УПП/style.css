@@ -1,0 +1,46 @@
+.area1 {
+background-color : rgb(248,248,248);	
+height : 150px;	
+}
+
+.area2 {
+background-color : rgb(230,230,230);
+height : 500px;		
+}
+
+.area3 {
+background-color : rgb(248,248,248);		
+height : 500px;		
+}
+
+.area4 {
+background-color : grey;	
+height : 500px;		
+}
+
+#search_input {
+width : 250px;
+margin-top : 70px;	
+}
+
+#search_button {
+margin-top : 70px;	
+}
+
+.main_content_class {
+background-color : white;	
+border : 1px solid rgb(243,243,243);
+}
+
+.salary {
+margin-top : 15px;	
+}
+
+.company_span {
+color : orange;
+size : 25px;	
+}
+
+.test {
+margin-top : 10px;
+}
