@@ -49,7 +49,6 @@ data = [{
 		"exp": 20,
 		"city": "Рим"
 	}
-	}
 ]
 
 window.addEventListener("load", start);
@@ -79,7 +78,27 @@ function transfer_to(link) {
 }
 
 function form_result(data) {
-	return '<div class="test col-md-8"><div class="col-md-3"><img src="' + data.pic + '"></div><dl><dt>' + data.vacancy + '</a></dt><dd>Компания: <span class="company_span">' + data.company + '</span></dd></dl> </div> <div class="col-md-4"><h3 class="text-success">' + data.salary + ' \u20BD</h3></div>'
+	return `<div class="test col-md-8">
+            <div class="hidden-xs col-xs-1 col-md-3">
+              <img src="${data.pic}">
+            </div>
+            <dl>
+              <dt>
+                ${data.vacancy}</a>
+              </dt>
+              <dd>
+                Компания: 
+                  <span class="company_span">
+                    ${data.company}
+                  </span>
+              </dd>
+            </dl> 
+          </div> 
+          <div class="col-md-4">
+            <h3 class="text-success"> 
+              ${data.salary}\u20BD
+            </h3>
+          </div>`
 }
 
 
