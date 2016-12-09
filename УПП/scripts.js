@@ -48,7 +48,8 @@ data = [{
 		"lang": "С++",
 		"exp": 20,
 		"city": "Рим"
-	},
+	}
+	}
 ]
 
 window.addEventListener("load", start);
