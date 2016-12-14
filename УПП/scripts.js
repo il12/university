@@ -311,21 +311,21 @@ function search_start() {
 }
 
 function apply_filters() {
- let f_comp = document.getElementById("f_comp").value,
-     f_lang = document.getElementById("f_lang").value,
-	 f_exp = document.getElementById("f_exp").value,
-	 f_city = document.getElementById("f_city").value,
-	 f_salary_min = document.getElementById("f_salary_min").value,
-	 f_salary_max = document.getElementById("f_salary_max").value,
-	 field = document.getElementById("main_content"),
-	 comp = true,
-	 lang = true,
-	 exp = true,
-	 city = true,
-	 salary_min = true,
-	 salary_max = true;
+  let f_comp = document.getElementById("f_comp").value,
+      f_lang = document.getElementById("f_lang").value,
+      f_exp = document.getElementById("f_exp").value,
+      f_city = document.getElementById("f_city").value,
+      f_salary_min = document.getElementById("f_salary_min").value,
+      f_salary_max = document.getElementById("f_salary_max").value,
+      field = document.getElementById("main_content"),
+      comp = true,
+      lang = true,
+      exp = true,
+      city = true,
+      salary_min = true,
+      salary_max = true;
 	
-field.innerHTML = '';
+  field.innerHTML = '';
 	
   // Применять ли фильтр Компании?
   if (f_comp.replace(" ","") != '') {
@@ -368,22 +368,22 @@ field.innerHTML = '';
   if (f_salary_max.replace(" ","") != '') {	 
 		salary_max = true; 
 		salary_max = +salary_max;
-	 } else {
+  } else {
 		salary_max = false;  
-	 }	 
+	}	 
 	
 for(let i=0; i<data.length;i++){ 
  let div = document.createElement("div"),
-     comp_ok = true,
-	 lang_ok = true,
-	 exp_ok = true,
-	 city_ok = true,
-	 salary_ok = true;
+    comp_ok = true,
+    lang_ok = true,
+    exp_ok = true,
+    city_ok = true,
+    salary_ok = true;
 	 	 
  if (data[i].show == true){
  // Проверяем, подходит ли предложение по компании
    if (comp == true) {
-	  if (f_comp == data[i].company){
+	  if (f_comp.toLowerCase() == data[i].company.toLowerCase()){
 		comp_ok = true;  
 	  } else {
 		comp_ok = false;  
@@ -391,7 +391,7 @@ for(let i=0; i<data.length;i++){
    }
  // Проверяем, подходит ли предложение по языку
    if (lang == true) {
-	  if (f_lang == data[i].lang){
+	  if (f_lang.toLowerCase() == data[i].lang.toLowerCase()){
 		lang_ok = true;  
 	  } else {
 		lang_ok = false;  
@@ -407,7 +407,7 @@ for(let i=0; i<data.length;i++){
    }
  // Проверяем, подходит ли предложение по городу
    if (city == true) {
-	  if (f_city == data[i].city){
+	  if (f_city.toLowerCase() == data[i].city.toLowerCase()){
 		city_ok = true;  
 	  } else {
 		city_ok = false;  
@@ -462,28 +462,7 @@ function transfer_to(link) {
 }
 
 function form_result(data) {
-	return `<div class="test col-md-8">
-            <div class="hidden-xs col-xs-1 col-md-3">
-              <img src="${data.pic}">
-            </div>
-            <dl>
-              <dt>
-                ${data.vacancy}</a>
-              </dt>
-              <dd>
-                Компания: 
-                  <span class="company_span">
-                    ${data.company}
-                  </span>
-				  <p>- ${data.city} - ${data.exp} -</p>
-              </dd>
-            </dl> 
-          </div> 
-          <div class="col-md-4">
-            <h3 class="text-success"> 
-              ${data.salary} \u20BD
-            </h3>
-          </div>`
+	return "<div class=\"test col-md-8\"><div class=\"hidden-xs col-xs-1 col-md-3\"><img src=\"" + data.pic + "\"></div><dl>  <dt>    " + data.vacancy + "</a>  </dt>  <dd>    \u041A\u043E\u043C\u043F\u0430\u043D\u0438\u044F:       <span class=\"company_span\">        " + data.company + "</span>\n\t\t\t\t<p> - " + data.city + " - " + data.exp + " -</p></dd></dl></div><div class=\"col-md-4\"><h3 class=\"text-success\">   " + data.salary + " \u20BD</h3></div>";
 }
 
 
