@@ -65,12 +65,13 @@ text-align : center;
 background-color : rgb(51,122,183);
 border-radius : 10px;
 color : white;
-margin-bottom : 20px;
+margin-bottom : 40px;
 margin-top : 20px;
 }
 
 #filtres_apply_button {
-margin-top : 20px;	
+margin-top : 20px;
+margin-bottom: 20px;	
 }
 
 .filter_salary_label {
