@@ -245,6 +245,7 @@ function start() {
 // Обработка нажатий на кнопки	
 	document.getElementById("search_button").addEventListener("click",search_start);
 	document.getElementById("filtres_apply_button").addEventListener("click",apply_filters);
+	document.getElementById("mobile_filtres_apply_button").addEventListener("click",apply_filters);
 }
 
 function search_start() {
@@ -311,12 +312,12 @@ function search_start() {
 }
 
 function apply_filters() {
-  let f_comp = document.getElementById("f_comp").value,
-      f_lang = document.getElementById("f_lang").value,
-      f_exp = document.getElementById("f_exp").value,
-      f_city = document.getElementById("f_city").value,
-      f_salary_min = document.getElementById("f_salary_min").value,
-      f_salary_max = document.getElementById("f_salary_max").value,
+  let f_comp = document.getElementById("f_comp").value || document.getElementById("mobile_f_comp").value,
+      f_lang = document.getElementById("f_lang").value || document.getElementById("mobile_f_lang").value,
+      f_exp = document.getElementById("f_exp").value || document.getElementById("mobile_f_exp").value,
+      f_city = document.getElementById("f_city").value || document.getElementById("mobile_f_city").value,
+      f_salary_min = document.getElementById("f_salary_min").value || document.getElementById("mobile_f_salary_min").value,
+      f_salary_max = document.getElementById("f_salary_max").value || document.getElementById("mobile_f_salary_max").value,
       field = document.getElementById("main_content"),
       comp = true,
       lang = true,
@@ -324,7 +325,7 @@ function apply_filters() {
       city = true,
       salary_min = true,
       salary_max = true;
-	
+	console.log(f_comp,f_lang,f_exp,f_city,f_salary_min,f_salary_max)
   field.innerHTML = '';
 	
   // Применять ли фильтр Компании?
