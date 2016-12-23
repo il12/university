@@ -454,5 +454,5 @@ function transfer_to(link) {
 }
 
 function form_result(data) {
-  return "<div class=\"test col-md-8\"><div class=\"hidden-xs col-xs-1 col-md-3\"><img src=\"" + data.pic + "\"></div><dl>  <dt>    " + data.vacancy + "</a>  </dt>  <dd>    \u041A\u043E\u043C\u043F\u0430\u043D\u0438\u044F:       <span class=\"company_span\">        " + data.company + "</span>\n\t\t\t\t<p> - " + data.city + " - " + data.exp + " -</p></dd></dl></div><div class=\"col-md-4\"><h3 class=\"text-success\">   " + data.salary + " \u20BD</h3></div>";
+  return "<div class=\"test col-md-12\"><div class=\"hidden-xs col-xs- hidden-sm\"><img src=\"" + data.pic + "\"></div><div ><dl>  <dt>    " + data.vacancy + "</a>  </dt>  <dd>    \u041A\u043E\u043C\u043F\u0430\u043D\u0438\u044F:       <span class=\"company_span\">        " + data.company + "</span>\n\t\t\t\t<p> - " + data.city + " - " + data.exp + " -</p></dd></dl></div><div class=\"col-md-4\"><h3 class=\"text-success\">   " + data.salary + " \u20BD</h3></div>";
 }
